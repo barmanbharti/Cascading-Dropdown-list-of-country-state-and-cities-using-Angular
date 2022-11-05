@@ -1,0 +1,47 @@
+<div class="col-md-4 col-xs-12"  style="display: flex;
+justify-content: space-around ;margin-top:15%;
+
+" >
+
+    <div class="form-group" >
+      <label style="font-size: medium;
+      font-family: cursive">Select Country</label>
+      <select class="form-control" (change)="onChangeCountry($any($event.target).value)" style="height:217%;border-radius: 25px;
+      background: #80808096;
+      border: 2px solid">
+        <option value="" style="font-size: medium;
+        font-family: cursive">--Select Country--</option>
+        <option *ngFor="let country of countryInfo; let i = index" [value]="country.CountryName" style="font-size: medium;
+        font-family: cursive">{{country.CountryName}}</option>
+      </select>  
+    </div>
+    
+    <div class="form-group" >
+        <label style="font-size: medium;
+        font-family: cursive">Select State</label>
+        <select class="form-control" (change)="onChangeState($any($event.target).value)" style="height:217%;border-radius: 25px;
+        background: #80808096;
+        border: 2px solid;
+        width: 264px">
+          <option value="" style="font-size: medium;
+          font-family: cursive">--Select State--</option>
+          <option *ngFor="let state of stateInfo; let j = index" [value]="state.StateName" style="font-size: medium;
+          font-family: cursive">{{state.StateName}}</option>
+        </select>  
+    </div>
+      
+    <div class="form-group">
+        <label style="font-size: medium;
+        font-family: cursive">Select City</label>
+        <select class="form-control" style="height:217%;border-radius: 25px;
+        background: #80808096;
+        border: 2px solid;
+        width: 264px"(change)="onChangeState($any($event.target).value)">
+            <option value="" style="font-size: medium;
+            font-family: cursive">--Select CIty--</option>
+          <option *ngFor="let city of cityInfo; let k = index" [value]="city.CityName" style="font-size: medium;
+          font-family: cursive">{{city}}</option>
+        </select>  
+    </div>
+
+</div>        
